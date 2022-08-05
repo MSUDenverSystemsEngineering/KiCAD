@@ -136,7 +136,7 @@ Try {
         {
         Write-log -Message "Found $($App.DisplayName) ($($App.DisplayVersion)) and a valid uninstall string, now attempting to uninstall."
         Execute-Process -Path $UninstPath -Parameters '/S'
-        Sleep -Seconds 5
+        Start-Sleep -Seconds 5
         Get-Process -Name "Un_A" -ErrorAction SilentlyContinue | Wait-Process
         }
         }
@@ -211,7 +211,7 @@ Try {
         {
         Write-log -Message "Found $($App.DisplayName) ($($App.DisplayVersion)) and a valid uninstall string, now attempting to uninstall."
         Execute-Process -Path $UninstPath -Parameters '/S'
-        Sleep -Seconds 5
+        Start-Sleep -Seconds 5
         Get-Process -Name "Un_A" -ErrorAction SilentlyContinue | Wait-Process
         }
         }
@@ -283,8 +283,8 @@ Catch {
 # SIG # Begin signature block
 # MIImVgYJKoZIhvcNAQcCoIImRzCCJkMCAQExDzANBglghkgBZQMEAgEFADB5Bgor
 # BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
-# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAomJ0KpgzrCxh1
-# 2ZWagAyZQQ+u6Qleu4INOdIhgkoLWqCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCBZ1JUCW+K506gQ
+# pDyUpxgCIKprU2T4kmfqsqpnRLqr1aCCH8EwggVvMIIEV6ADAgECAhBI/JO0YFWU
 # jTanyYqJ1pQWMA0GCSqGSIb3DQEBDAUAMHsxCzAJBgNVBAYTAkdCMRswGQYDVQQI
 # DBJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcMB1NhbGZvcmQxGjAYBgNVBAoM
 # EUNvbW9kbyBDQSBMaW1pdGVkMSEwHwYDVQQDDBhBQUEgQ2VydGlmaWNhdGUgU2Vy
@@ -458,32 +458,32 @@ Catch {
 # ZDErMCkGA1UEAxMiU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5nIENBIFIzNgIR
 # AKVN33D73PFMVIK48rFyyjEwDQYJYIZIAWUDBAIBBQCggYQwGAYKKwYBBAGCNwIB
 # DDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMxDAYKKwYBBAGCNwIBBDAcBgorBgEE
-# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQg5Gjae4g990Pk
-# qPqqiIpDb7Ce5qKAZMm+dcfYF8t5PQ8wDQYJKoZIhvcNAQEBBQAEggGAB54pFKXb
-# JiEouHS0rR3eggsOk0jcUBVTXUuLA1Or4rrWFtZce9jlgFtnybY43y6YmZxExzFw
-# +KiYKn4ohvqS6L0filIw7atUfRDdMxYkKUqIem+IGAjO6+I/GS6ByZwPDffacaBs
-# o1x05HxlLCA2XliWAKx/1HWEybmA+7rMJh5ixggJDukCqBKoUSOlJXHZaPBODdL1
-# D6Cr0JpoFP+5DsfHGoeZlK+oIPOTUatsFizEIWnc2dtRqHpmRh83LVvRvhBjC6xS
-# hsNg/26mW7BH1fm8WM84e+k5bZNEoWi2HB+FZI8BS9vmVaR40xuflfXuoDAqx7Hb
-# uuRodEcoWG7y9ZVwK/ELPUHHP6JC8xXTp4pOUkotXBxBXmQJh+MqHhxgV7RhkwIx
-# tGY0UDUC6QJIRkBKasWAcW5Cj9P8wdXgLix0k2CnjG6lVHfVEzJOBzy0ATO3YSjp
-# aaGpd1YjSYfjEdG7fPBF7zdSQIWUXNYUisUH6U1gLWYgSoX01h40u7huoYIDTDCC
+# AYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAvBgkqhkiG9w0BCQQxIgQgfNAM1CmDSEXF
+# s0CBzoLtulwF8xtPU7Ha/Jb8jd/pCiEwDQYJKoZIhvcNAQEBBQAEggGAEDOPjULy
+# UJaNMJyyOY9hAX3DsK6QUdgLQmS6wUGgzs3z5C8xeIVBcOHA8xA75jhNNBbZ6hxx
+# 6J9IVfcdbsvmYENUmS1Aj96ulwcBpVotKDe2+xUccWQaNZVWC6uVN7v8cU0zhUmn
+# TZoecFcAEsXHlcYysgOwy3UGegwAWoxFBhHctVmicC8d8HYk2mqHFH67yz+Bk7YO
+# /jtz7KHs3RxETfR5bF09vbOVXksKlyR8YWIizNIZFLGVmW4BCIV0+rWNz/mvH394
+# inZrTa8eaZ33t/tcw5fqw6mB1KT3tTY9yPz3ydh9p8FPRTXxFBS3ppXT0NCaEssH
+# MhYUhotMUtqNRePqpbnCaNlNYYbNP0jqZ4/7qSv70du/NJvglfDkaBiMbWUTmli8
+# 199WI2LRL+kiJuVHoJeFmHrxV/YuZxAuUXV2aHhJr1bV2asn/OhPgWNkN4p0jZv3
+# QSvhCStkYBT0xz2AscV20np49IPjK+O9+04YyK7c7m7glskP7eG3h3zBoYIDTDCC
 # A0gGCSqGSIb3DQEJBjGCAzkwggM1AgEBMIGSMH0xCzAJBgNVBAYTAkdCMRswGQYD
 # VQQIExJHcmVhdGVyIE1hbmNoZXN0ZXIxEDAOBgNVBAcTB1NhbGZvcmQxGDAWBgNV
 # BAoTD1NlY3RpZ28gTGltaXRlZDElMCMGA1UEAxMcU2VjdGlnbyBSU0EgVGltZSBT
 # dGFtcGluZyBDQQIRAJA5f5rSSjoT8r2RXwg4qUMwDQYJYIZIAWUDBAICBQCgeTAY
 # BgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0yMjA4MDUx
-# NDQ5NTRaMD8GCSqGSIb3DQEJBDEyBDBPWgE6ncOcNehb0Tsomn7mlMpuWcCbh4va
-# RWtwX1mvQGpXMmpeR/P+ozQuPme0etkwDQYJKoZIhvcNAQEBBQAEggIAB6wusL6L
-# NgKwsKRkewBEAkvMcbE4MM1YF1MNX1oy6IJBkM4m+PcfLj0AssXeYkWOb+A4CAKJ
-# 2vhdf9l71Gx3NKf8jmdwc44fTvjabuhA5awoWopHQOhBUZ+gZKsn54X4WtcVveKb
-# AdlIX2bqbxZECrPUsa2YESsmfQkzp0JCyodexo3AkbM87uEjZjT6TvyHHmq/GFVx
-# LH/w/fGYvmMXMSBbc3qDM2lJPCnciXA9+KSi8RFM72KDFTD31eaMfStMYcvJamil
-# +Q3ESst/vwZifrf3w1zR6fncwHOt1Gz5lc3XfKjJjusL/EQGb/QP95oHv8+K9eoe
-# DPdojGf7NBe5jv8zSk+C2nWqNC8uNJw4Q2i6B6Fl5daFYlgweJYpnS3aMzxUuPxm
-# 0N5i/15Hr8qOA01a75T44pk9mkpaWGapbbToI0gPU9ZEQ5diK6K6iwtFgt/vK/7R
-# YnePqnSk9h3QvVUurij3hjSAeCW3xtJkvqbdzBHRsaQOvjE7TTJ3HF1OF+e2GjCP
-# 15v1Irsiy+h9cFEkacAjJNVM8Qqw3kQBXEKQ56plNTOkYTKBC7YrzMNUPAv/wnFu
-# lYMK0dEX6ioGJMwSlaADn7Vf5ZyIw/fVjZ2QRcIw5XvJImQP2uwU8nKh5qBYmWjX
-# FlOaBQWFbVUCEwL/F6axC0jgZxQ2Ymc0c/0=
+# NTAzMjFaMD8GCSqGSIb3DQEJBDEyBDCE44w9ovZvmiuThSU5DWxzfOG/WrEO+lUw
+# eI9G0gw8aqnoDj+QGm9KQnceJmY9xCUwDQYJKoZIhvcNAQEBBQAEggIAfEboPhyE
+# quQ7SeH958HWsWVHgrvaxL2v/6PwNiZ9c+co1lKMY7aKrpIlbXgJFAAOxxTEfRLU
+# na4CsI0GHjSGsESZBDYM5qT9wJ8I6H3vYWkLdSFHVrckoaqlj08eRmX/JJhWMjdj
+# RdvkPgjgXISeibundrq4Wd/WuLQRDKBckoDvQ7toXoNWEMTinwWHb9L1sGj4X8Dy
+# 6dSHLwuE03+xo1wl9KObehQbtkb2piAf5h/6gv9x/0VBHcVc8C1hvEjPcmpCgtYv
+# 0NKEzX3F6Uc7Q6XxeaQ2Nl4rlI2/bLxD3ByQeJx4rfYiABL6tR0M862nYX+m+ytM
+# I4h7JUWmvNY41lNzd0gVf8jrvg/u+62g1dN4CPDrjHAao+z5eHKRV8OrF4EDL4Bp
+# guANFJprg64YWDPUEmQPILqyonGn2g1h/tAUArxhGhLMu8wYsjYf5zQr7Z/eF6F8
+# 9Pe1/BuKmbbUuhw7tWVhyTCaRO5UXM2QiPt3xmqpF1j5snZbTFL/yNVLRV2he+b6
+# bKlzvLFtQISDIaqB77wYylpwcD8Y8N1FeqikPlEwxpUwn7ZvsqEPGvN2CNOIKkrI
+# 8WHZOWqqm1AaL/chp9xzYBx11RzbrrBkTDs/VlTFyrlyO7mjrNDBDN5Z0gfOJ/9U
+# MEEeQp56CvgHedVcae0IKP7Fj0hwkLyIsP4=
 # SIG # End signature block
